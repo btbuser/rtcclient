@@ -88,7 +88,7 @@ class RTCClient(RTCBase):
             _allow_redirects = False
 
         _headers = {"Content-Type": self.CONTENT_XML}
-        resp = self.get(self.url + "/authenticated/identity",
+        resp = self.get(self.url + "/secure/authenticated/identity",
                         auth=(self.username, self.password),
                         verify=False,
                         headers=_headers,
@@ -112,7 +112,7 @@ class RTCClient(RTCBase):
             if resp.headers.get("set-cookie") is not None:
                 _headers["Cookie"] = resp.headers.get("set-cookie")
 
-        resp = self.get(self.url + "/authenticated/identity",
+        resp = self.get(self.url + "/secure/authenticated/identity",
                         auth=(self.username, self.password),
                         verify=False,
                         headers=_headers,
