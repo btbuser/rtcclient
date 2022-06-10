@@ -93,7 +93,7 @@ class RTCClient(RTCBase):
                         verify=False,
                         headers=_headers,
                         proxies=self.proxies,
-                        allow_redirects=_allow_redirects)
+                        allow_redirects=False)
 
         # authfailed
         authfailed = resp.headers.get("x-com-ibm-team-repository-web-auth-msg")
@@ -117,7 +117,7 @@ class RTCClient(RTCBase):
                         verify=False,
                         headers=_headers,
                         proxies=self.proxies,
-                        allow_redirects=_allow_redirects)
+                        allow_redirects=False)
 
         # fix issue #68
         if not _allow_redirects:
